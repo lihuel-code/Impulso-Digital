@@ -20,6 +20,7 @@ export default function GoogleAdsPage() {
     <>
       <ServiceHero
         eyebrow="Campañas Google Ads · Generación de leads"
+        service="google-ads"
         title={
           <>
             Generación de clientes a través de{" "}
@@ -51,8 +52,8 @@ export default function GoogleAdsPage() {
                 El negocio depende de referencias o contactos directos sin un sistema escalable. Cada mes empieza desde cero.
               </p>
             </div>
-            <div className="p-7 md:p-8 rounded-2xl bg-white border-l-4 border-l-gold-400 border-y border-r border-ink-100">
-              <p className="text-xs font-semibold uppercase tracking-wider text-gold-500 mb-3">Invirtiendo sin método</p>
+            <div className="p-7 md:p-8 rounded-2xl bg-white border-l-4 border-l-accent-400 border-y border-r border-ink-100">
+              <p className="text-xs font-semibold uppercase tracking-wider text-accent-500 mb-3">Invirtiendo sin método</p>
               <h3 className="display text-2xl text-ink-900 mb-3">Plata gastada, resultados borrosos</h3>
               <p className="text-ink-500 leading-relaxed">
                 Campañas sin segmentación clara, sin optimización continua y sin medición real de qué generó cada peso.
@@ -95,14 +96,14 @@ export default function GoogleAdsPage() {
             <div className="relative bg-white rounded-3xl border border-ink-100 shadow-card p-6 md:p-8">
               <div className="flex items-center gap-2 mb-6 text-xs text-ink-400">
                 <span className="w-2.5 h-2.5 rounded-full bg-red-400" />
-                <span className="w-2.5 h-2.5 rounded-full bg-gold-400" />
+                <span className="w-2.5 h-2.5 rounded-full bg-accent-400" />
                 <span className="w-2.5 h-2.5 rounded-full bg-green-400" />
                 <span className="ml-3 truncate">google.com/search</span>
               </div>
               <div className="flex items-center gap-3 px-4 py-3 rounded-full border border-ink-100 mb-6">
                 <Search size={16} className="text-brand-500" />
                 <span className="text-ink-700 text-sm">
-                  servicios profesionales <span className="bg-gold-100 px-1 rounded">cerca mío</span>
+                  servicios profesionales <span className="bg-accent-100 px-1 rounded">cerca mío</span>
                 </span>
               </div>
               <div className="space-y-3">
@@ -121,7 +122,7 @@ export default function GoogleAdsPage() {
                 </div>
               </div>
             </div>
-            <div className="absolute -top-3 -right-3 px-3 py-1.5 rounded-full bg-ink-900 text-white text-xs font-semibold shadow-card">
+            <div className="absolute -top-3 -right-3 px-3 py-1.5 rounded-full bg-brand-600 text-white text-xs font-semibold shadow-card">
               Posición #1
             </div>
           </div>
@@ -185,15 +186,15 @@ export default function GoogleAdsPage() {
             </div>
 
             {/* Plan Scale - featured */}
-            <div className="relative p-8 md:p-10 rounded-3xl bg-ink-900 text-white shadow-card">
-              <div className="absolute -top-3 right-8 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-brand-500 text-white text-xs font-semibold">
+            <div className="relative p-8 md:p-10 rounded-3xl bg-brand-500 text-white shadow-card">
+              <div className="absolute -top-3 right-8 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white text-brand-600 text-xs font-semibold shadow-card">
                 <Star size={12} fill="currentColor" />
                 Recomendado
               </div>
               
-              <p className="text-xs font-semibold uppercase tracking-wider text-gold-400 mb-3">Plan Scale</p>
+              <p className="text-xs font-semibold uppercase tracking-wider text-accent-400 mb-3">Plan Scale</p>
               <h3 className="display text-3xl mb-2">Escalar volumen</h3>
-              <p className="text-ink-200 mb-8">Para empresas que ya validaron Google Ads y quieren aumentar el alcance.</p>
+              <p className="text-blue-100 mb-8">Para empresas que ya validaron Google Ads y quieren aumentar el alcance.</p>
               
               <ul className="space-y-3 mb-8">
                 {[
@@ -203,15 +204,15 @@ export default function GoogleAdsPage() {
                   "Soporte prioritario",
                 ].map((f, i) => (
                   <li key={i} className="flex items-start gap-2.5">
-                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-400 shrink-0" />
+                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-white shrink-0" />
                     <span>{f}</span>
                   </li>
                 ))}
               </ul>
 
               <div className="pt-6 border-t border-white/10">
-                <p className="text-xs font-semibold uppercase tracking-wider text-gold-400 mb-1">Desde</p>
-                <p className="display text-3xl font-semibold">$500.000–600.000<span className="text-base text-ink-300 font-sans font-normal">/mes</span></p>
+                <p className="text-xs font-semibold uppercase tracking-wider text-accent-400 mb-1">Desde</p>
+                <p className="display text-3xl font-semibold">$500.000–600.000<span className="text-base text-blue-200 font-sans font-normal">/mes</span></p>
               </div>
             </div>
           </div>

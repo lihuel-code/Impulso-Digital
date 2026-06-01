@@ -3,7 +3,17 @@ import { Search, ArrowRight, Sparkles } from "lucide-react";
 
 export function HomeHero() {
   return (
-    <section className="relative pt-16 md:pt-24 pb-20 md:pb-28 overflow-hidden">
+    <section className="relative pt-16 md:pt-24 pb-20 md:pb-28 overflow-hidden isolate">
+      {/* Background Video (Subtle Loop) */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-[0.12] pointer-events-none -z-10"
+        src="/hero-bg.mp4"
+      />
+
       {/* Background atmospherics */}
       <div className="absolute inset-0 bg-radial-fade pointer-events-none" />
       <div className="absolute inset-x-0 top-0 h-[600px] bg-faint-grid opacity-50 pointer-events-none [mask-image:linear-gradient(to_bottom,black,transparent)]" />
@@ -27,7 +37,7 @@ export function HomeHero() {
             en un{" "}
             <span className="relative inline-block">
               <span className="relative z-10">imán de clientes</span>
-              <span className="absolute bottom-1.5 left-0 right-0 h-3 md:h-4 bg-gold-100/80 -z-0 -skew-x-3" />
+              <span className="absolute bottom-1.5 left-0 right-0 h-3 md:h-4 bg-accent-100/80 -z-0 -skew-x-3" />
             </span>
             <span className="text-brand-500">.</span>
           </h1>
@@ -35,9 +45,8 @@ export function HomeHero() {
           {/* Subhead */}
           <p className="text-lg md:text-xl text-ink-500 max-w-2xl leading-relaxed mb-10">
             Generamos un flujo previsible de oportunidades comerciales para tu
-            empresa de servicios. Tres servicios que se combinan o funcionan
-            por separado: <span className="text-ink-900 font-medium">Sistema de ventas</span>,{" "}
-            <span className="text-ink-900 font-medium">Google Ads</span> y{" "}
+            empresa de servicios. Dos servicios que se combinan o funcionan
+            por separado: <span className="text-ink-900 font-medium">Google Ads</span> y{" "}
             <span className="text-ink-900 font-medium">Sitios web</span>.
           </p>
 
@@ -78,7 +87,7 @@ export function HomeHero() {
                 <p className="font-semibold text-ink-900">tu landing</p>
               </div>
               <div className="px-3 py-3 md:py-4 rounded-xl bg-ink-900 border border-ink-900 text-xs md:text-sm">
-                <p className="text-gold-400 mb-1 text-[10px] md:text-xs uppercase tracking-wider font-semibold">03. Se convierten</p>
+                <p className="text-accent-400 mb-1 text-[10px] md:text-xs uppercase tracking-wider font-semibold">03. Se convierten</p>
                 <p className="font-semibold text-white">en clientes</p>
               </div>
             </div>

@@ -4,6 +4,7 @@ import { FeatureGrid } from "@/components/FeatureGrid";
 import { ProcessTimeline } from "@/components/ProcessTimeline";
 import { ContactSection } from "@/components/ContactSection";
 import { Testimonials } from "@/components/Testimonials";
+import { PortfolioGrid } from "@/components/PortfolioGrid";
 import {
   Layout, Smartphone, Gauge, Search, Code2, BarChart3,
   Zap, ShieldCheck, Sparkles, Eye, MousePointer2, Layers,
@@ -20,6 +21,7 @@ export default function SitiosWebPage() {
     <>
       <ServiceHero
         eyebrow="Sitios web · Diseño orientado a conversión"
+        service="sitios-web"
         title={
           <>
             Tu sitio web debería{" "}
@@ -113,24 +115,39 @@ export default function SitiosWebPage() {
               </ul>
             </div>
 
-            <div className="p-8 md:p-10 rounded-3xl bg-ink-900 text-white border border-ink-900">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white/10 text-brand-300 mb-5">
+            <div className="p-8 md:p-10 rounded-3xl bg-brand-500 text-white border border-brand-500">
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white/10 text-white mb-5">
                 <Sparkles size={22} />
               </div>
               <h3 className="display text-2xl mb-3">Sitio institucional</h3>
-              <p className="text-ink-200 mb-6 leading-relaxed">
+              <p className="text-blue-100 mb-6 leading-relaxed">
                 Múltiples páginas para empresas que necesitan presentar
                 servicios, equipo, blog y casos de éxito en una estructura ordenada.
               </p>
-              <ul className="space-y-2 text-sm text-ink-100">
+              <ul className="space-y-2 text-sm text-white">
                 {["Múltiples secciones organizadas", "Blog/recursos opcional", "Sistema de contenido editable", "SEO técnico avanzado"].map((f, i) => (
                   <li key={i} className="flex items-start gap-2">
-                    <span className="mt-2 w-1 h-1 rounded-full bg-brand-400 shrink-0" />
+                    <span className="mt-2 w-1 h-1 rounded-full bg-white shrink-0" />
                     {f}
                   </li>
                 ))}
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio */}
+      <section className="section">
+        <div className="wrap">
+          <SectionHeader
+            eyebrow="Trabajos realizados"
+            title="Sitios que diseñamos y construimos."
+            description="Cada proyecto es único. Acá podés ver algunos de los sitios que desarrollamos para nuestros clientes."
+          />
+
+          <div className="mt-12 md:mt-16">
+            <PortfolioGrid />
           </div>
         </div>
       </section>

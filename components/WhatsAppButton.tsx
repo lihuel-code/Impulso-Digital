@@ -1,17 +1,35 @@
+"use client";
+
 import React from 'react';
 
 export const WhatsAppButton = () => {
   // Replace with the actual phone number and optional message
-  const phoneNumber = "+5491133980499"; 
+  const phoneNumber = "5491133980499";
   const message = "Hola, me gustaría recibir más información.";
   
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+  const handleClick = () => {
+    // Call our internal API route to log the click, don't await so it doesn't block
+    fetch('/api/track-whatsapp', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        action: 'whatsapp_click',
+        timestamp: new Date().toISOString(),
+        userAgent: window.navigator.userAgent
+      }),
+    }).catch(console.error); // Ignore errors so user isn't affected
+  };
 
   return (
     <a
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={handleClick}
       className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform duration-300 hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#25D366]/50"
       aria-label="Chatear por WhatsApp"
     >

@@ -90,7 +90,6 @@ export function ContactForm({
               type="text"
               required
               autoComplete="name"
-              placeholder="María Pérez"
               className={inputCls}
             />
           </div>
@@ -101,7 +100,6 @@ export function ContactForm({
               name="company"
               type="text"
               autoComplete="organization"
-              placeholder="Tu negocio"
               className={inputCls}
             />
           </div>
@@ -116,7 +114,6 @@ export function ContactForm({
               type="email"
               required
               autoComplete="email"
-              placeholder="vos@empresa.com"
               className={inputCls}
             />
           </div>
@@ -127,7 +124,6 @@ export function ContactForm({
               name="phone"
               type="tel"
               autoComplete="tel"
-              placeholder="+54 11 0000 0000"
               className={inputCls}
             />
           </div>
@@ -140,7 +136,6 @@ export function ContactForm({
             name="message"
             required
             rows={4}
-            placeholder="¿Qué buscás resolver? ¿Cuál es la situación actual del canal de captación?"
             className={inputCls}
           />
         </div>

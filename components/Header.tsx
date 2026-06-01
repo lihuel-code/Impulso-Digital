@@ -6,7 +6,6 @@ import { Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
 
 const links = [
-  { href: "/sistema-ventas", label: "Sistema de ventas" },
   { href: "/google-ads",     label: "Google Ads" },
   { href: "/sitios-web",     label: "Sitios web" },
 ];
@@ -54,7 +53,7 @@ export function Header() {
         <div className="hidden md:flex items-center gap-4">
           <Link
             href="/#contacto"
-            className="inline-flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-full bg-ink-900 text-white hover:bg-brand-500 transition-colors"
+            className="inline-flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-full bg-brand-500 text-white hover:bg-brand-600 transition-colors"
           >
             Hablemos
           </Link>
@@ -86,7 +85,7 @@ export function Header() {
             <Link
               href="/#contacto"
               onClick={() => setOpen(false)}
-              className="mt-3 inline-flex items-center justify-center px-4 py-3 rounded-full bg-ink-900 text-white text-sm font-medium"
+              className="mt-3 inline-flex items-center justify-center px-4 py-3 rounded-full bg-brand-500 text-white text-sm font-medium"
             >
               Hablemos
             </Link>

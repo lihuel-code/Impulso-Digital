@@ -4,7 +4,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { CaseStudies } from "@/components/CaseStudies";
 import { ContactSection } from "@/components/ContactSection";
 import { SectionHeader } from "@/components/SectionHeader";
-import { Workflow, Target, Globe, ShieldCheck, Gauge, MessagesSquare } from "lucide-react";
+import { Target, Globe, ShieldCheck, Gauge, MessagesSquare } from "lucide-react";
 
 export default function HomePage() {
   return (
@@ -29,31 +29,29 @@ export default function HomePage() {
       </section>
 
       {/* Services */}
-      <section id="servicios" className="section">
-        <div className="wrap">
+      <section id="servicios" className="section relative overflow-hidden isolate">
+        {/* Background atmospherics – same vibe as HomeHero */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-[0.06] pointer-events-none -z-10"
+          src="/hero-bg.mp4"
+        />
+        <div className="absolute inset-0 bg-radial-fade pointer-events-none" />
+        <div className="absolute inset-x-0 top-0 h-[500px] bg-faint-grid opacity-40 pointer-events-none [mask-image:linear-gradient(to_bottom,black,transparent)]" />
+
+        <div className="wrap relative">
           <SectionHeader
             eyebrow="Nuestros servicios"
-            title="Tres formas de ordenar tu canal comercial."
+            title="Dos formas de ordenar tu canal comercial."
             description="Pueden funcionar por separado o combinarse en un sistema completo. Cada uno está diseñado para resolver un problema concreto del negocio."
           />
 
-          <div className="mt-12 md:mt-16 grid md:grid-cols-3 gap-5 md:gap-6">
+          <div className="mt-12 md:mt-16 grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <ServiceCard
-              number="01 / Sistema completo"
-              icon={Workflow}
-              title="Sistema de ventas"
-              description="Captación + conversión + seguimiento integrados. Para empresas que quieren un sistema comercial predecible de extremo a extremo."
-              bullets={[
-                "Generación de leads multi-canal",
-                "Landing optimizada para conversión",
-                "CRM en Google Sheets sin licencias",
-                "Proceso de seguimiento definido",
-              ]}
-              href="/sistema-ventas"
-              featured
-            />
-            <ServiceCard
-              number="02 / Captación"
+              number="01 / Captación"
               icon={Target}
               title="Campañas Google Ads"
               description="Aparecé cuando tus clientes te están buscando. Generación de leads calificados con presupuesto controlado y escalable."
@@ -66,7 +64,7 @@ export default function HomePage() {
               href="/google-ads"
             />
             <ServiceCard
-              number="03 / Presencia"
+              number="02 / Presencia"
               icon={Globe}
               title="Sitios web"
               description="Tu presencia online diseñada para generar consultas, no solo para verse linda. Páginas pensadas estratégicamente."

@@ -48,8 +48,8 @@ export async function POST(req: NextRequest) {
     const html = `
       <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; background: #f4f7fb; padding: 24px;">
         <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 8px rgba(10,31,68,0.08);">
-          <div style="background: #0A1F44; padding: 28px 32px; border-bottom: 4px solid #1E5FD9;">
-            <p style="color: #F5B400; font-size: 11px; font-weight: 700; letter-spacing: 3px; margin: 0 0 6px;">NUEVO LEAD</p>
+          <div style="background: #0A1F44; padding: 28px 32px; border-bottom: 4px solid #004481;">
+            <p style="color: #02A0A5; font-size: 11px; font-weight: 700; letter-spacing: 3px; margin: 0 0 6px;">NUEVO LEAD</p>
             <h1 style="color: white; font-size: 22px; margin: 0; font-weight: 600;">${serviceLabel}</h1>
           </div>
           <div style="padding: 28px 32px;">
@@ -58,7 +58,7 @@ export async function POST(req: NextRequest) {
               <tr><td style="padding: 0 0 16px; color: #0A1F44; font-size: 16px; font-weight: 600;">${name}</td></tr>
 
               <tr><td style="padding: 8px 0; color: #64748B; font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;">Email</td></tr>
-              <tr><td style="padding: 0 0 16px;"><a href="mailto:${email}" style="color: #1E5FD9; font-size: 16px; text-decoration: none;">${email}</a></td></tr>
+              <tr><td style="padding: 0 0 16px;"><a href="mailto:${email}" style="color: #0063E5; font-size: 16px; text-decoration: none;">${email}</a></td></tr>
 
               ${phone ? `
               <tr><td style="padding: 8px 0; color: #64748B; font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;">Teléfono</td></tr>
@@ -83,8 +83,8 @@ export async function POST(req: NextRequest) {
 
     // If Resend is configured, send the email
     const resendKey = process.env.RESEND_API_KEY;
-    const toEmail   = process.env.LEAD_EMAIL_TO || "hola@impulsodigital.com";
-    const fromEmail = process.env.LEAD_EMAIL_FROM || "Impulso Digital <leads@impulsodigital.com>";
+    const toEmail   = process.env.LEAD_EMAIL_TO || "gestion@impulsodigitalweb.com.ar";
+    const fromEmail = process.env.LEAD_EMAIL_FROM || "Impulso Digital <leads@impulsodigitalweb.com.ar>";
 
     if (resendKey) {
       const resend = new Resend(resendKey);

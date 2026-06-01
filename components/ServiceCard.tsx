@@ -23,17 +23,17 @@ export function ServiceCard({
   return (
     <Link
       href={href}
-      className={`group relative flex flex-col p-7 md:p-8 rounded-3xl border transition-all duration-500 ${
+      className={`group relative flex flex-col p-7 md:p-8 rounded-3xl border backdrop-blur-sm transition-all duration-500 ${
         featured
-          ? "bg-ink-900 border-ink-900 text-white hover:shadow-card hover:-translate-y-1"
-          : "bg-white border-ink-100 text-ink-900 hover:border-brand-200 hover:shadow-card hover:-translate-y-1"
+          ? "bg-brand-500 border-brand-500 text-white hover:shadow-card hover:-translate-y-1"
+          : "bg-white/70 border-ink-100 text-ink-900 hover:border-brand-200 hover:shadow-card hover:-translate-y-1"
       }`}
     >
       {/* Top row: number + icon */}
       <div className="flex items-start justify-between mb-8">
         <span
           className={`text-xs font-mono ${
-            featured ? "text-brand-300" : "text-ink-300"
+            featured ? "text-blue-200" : "text-ink-300"
           }`}
         >
           {number}
@@ -41,7 +41,7 @@ export function ServiceCard({
         <div
           className={`flex items-center justify-center w-11 h-11 rounded-xl ${
             featured
-              ? "bg-white/10 text-brand-300"
+              ? "bg-white/10 text-white"
               : "bg-brand-50 text-brand-500"
           }`}
         >
@@ -61,7 +61,7 @@ export function ServiceCard({
       {/* Description */}
       <p
         className={`text-[15px] leading-relaxed mb-6 ${
-          featured ? "text-ink-200" : "text-ink-500"
+          featured ? "text-blue-100" : "text-ink-500"
         }`}
       >
         {description}
@@ -73,12 +73,12 @@ export function ServiceCard({
           <li
             key={i}
             className={`flex items-start gap-2.5 text-sm ${
-              featured ? "text-ink-100" : "text-ink-700"
+              featured ? "text-white" : "text-ink-700"
             }`}
           >
             <span
               className={`mt-2 inline-block w-1 h-1 rounded-full shrink-0 ${
-                featured ? "bg-brand-400" : "bg-brand-500"
+                featured ? "bg-white" : "bg-brand-500"
               }`}
             />
             {b}
@@ -102,7 +102,7 @@ export function ServiceCard({
         <span
           className={`flex items-center justify-center w-9 h-9 rounded-full transition-all duration-300 group-hover:rotate-45 ${
             featured
-              ? "bg-brand-500 text-white"
+              ? "bg-white text-brand-600"
               : "bg-ink-50 text-ink-900 group-hover:bg-brand-500 group-hover:text-white"
           }`}
         >

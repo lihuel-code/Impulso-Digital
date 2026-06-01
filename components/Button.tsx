@@ -24,7 +24,7 @@ export function Button({
 
   const variants = {
     primary:
-      "bg-ink-900 text-white hover:bg-brand-500 hover:shadow-card",
+      "bg-brand-500 text-white hover:bg-brand-600 hover:shadow-card",
     secondary:
       "bg-brand-50 text-brand-700 hover:bg-brand-100 border border-brand-100",
     ghost:
