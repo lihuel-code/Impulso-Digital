@@ -198,7 +198,7 @@ export default function GoogleAdsPage() {
               
               <ul className="space-y-3 mb-8">
                 {[
-                  "Hasta 5–8 frentes activos",
+                  "Hasta 5 frentes activos",
                   "Cobertura ampliada (geográfica o por servicio)",
                   "Optimización semanal y reporting avanzado",
                   "Soporte prioritario",
