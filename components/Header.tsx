@@ -8,6 +8,7 @@ import { Logo } from "./Logo";
 const links = [
   { href: "/google-ads",     label: "Google Ads" },
   { href: "/sitios-web",     label: "Sitios web" },
+  { href: "/primero-en-tu-zona", label: "Google Ads Local" },
 ];
 
 export function Header() {

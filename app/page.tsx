@@ -4,7 +4,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { CaseStudies } from "@/components/CaseStudies";
 import { ContactSection } from "@/components/ContactSection";
 import { SectionHeader } from "@/components/SectionHeader";
-import { Target, Globe, ShieldCheck, Gauge, MessagesSquare } from "lucide-react";
+import { Target, Globe, ShieldCheck, Gauge, MessagesSquare, MapPin } from "lucide-react";
 
 export default function HomePage() {
   return (
@@ -49,7 +49,7 @@ export default function HomePage() {
             description="Pueden funcionar por separado o combinarse en un sistema completo. Cada uno está diseñado para resolver un problema concreto del negocio."
           />
 
-          <div className="mt-12 md:mt-16 grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="mt-12 md:mt-16 grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             <ServiceCard
               number="01 / Captación"
               icon={Target}
@@ -75,6 +75,19 @@ export default function HomePage() {
                 "Métricas y formularios integrados",
               ]}
               href="/sitios-web"
+            />
+            <ServiceCard
+              number="03 / Local"
+              icon={MapPin}
+              title="Google Ads Local"
+              description="Aparecé arriba en Google y en el mapa cuando te buscan cerca de tu local. Campaña local + ficha de Google."
+              bullets={[
+                "Campaña de búsqueda local",
+                "Ficha de Google optimizada",
+                "Medición de llamadas y rutas",
+                "Reportes mensuales claros",
+              ]}
+              href="/primero-en-tu-zona"
             />
           </div>
         </div>
