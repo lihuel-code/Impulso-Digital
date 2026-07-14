@@ -5,7 +5,7 @@ import { ArrowRight, Check, Loader2, AlertCircle } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 type ContactFormProps = {
-  service: string;       // "sistema-ventas" | "google-ads" | "sitios-web" | "general"
+  service: string;       // "google-ads" | "sitios-web" | "general"
   title?: string;
   subtitle?: string;
   variant?: "light" | "dark";

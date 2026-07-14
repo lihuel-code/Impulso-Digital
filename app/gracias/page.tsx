@@ -2,10 +2,9 @@ import Link from "next/link";
 import { CheckCircle2, ArrowLeft, Calendar, Mail } from "lucide-react";
 
 const SERVICE_LABELS: Record<string, string> = {
-  "sistema-ventas": "Sistema de ventas",
-  "google-ads": "Google Ads",
-  "sitios-web": "Sitios web",
-  "general": "consulta general",
+  "google-ads": "las campañas de Google Ads",
+  "sitios-web": "el diseño de tu sitio web",
+  "general": "tu proyecto",
 };
 
 type Props = {

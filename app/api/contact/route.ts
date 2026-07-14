@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
 const SERVICE_LABELS: Record<string, string> = {
-  "sistema-ventas": "Sistema de ventas",
   "google-ads":     "Campañas Google Ads",
   "sitios-web":     "Sitios web",
   "general":        "Consulta general",
