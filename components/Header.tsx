@@ -52,7 +52,9 @@ export function Header() {
 
         <div className="hidden md:flex items-center gap-4">
           <Link
-            href="/#contacto"
+            href="https://wa.me/5491133980499"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-full bg-brand-500 text-white hover:bg-brand-600 transition-colors"
           >
             Hablemos
@@ -83,7 +85,9 @@ export function Header() {
               </Link>
             ))}
             <Link
-              href="/#contacto"
+              href="https://wa.me/5491133980499"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
               className="mt-3 inline-flex items-center justify-center px-4 py-3 rounded-full bg-brand-500 text-white text-sm font-medium"
             >

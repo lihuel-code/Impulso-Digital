@@ -14,7 +14,7 @@ type ContactFormProps = {
 export function ContactForm({
   service,
   title = "Hablemos de tu negocio",
-  subtitle = "Te respondemos en menos de 24 horas hábiles. Sin compromiso, sin venta forzada.",
+  subtitle = "Te respondemos de Lun a Vie · 9 a 17h. Sin compromiso, sin venta forzada.",
   variant = "light",
 }: ContactFormProps) {
   const router = useRouter();

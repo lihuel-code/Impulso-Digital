@@ -100,7 +100,12 @@ export default function SitiosWebPage() {
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-brand-50 text-brand-500 mb-5">
                 <Layers size={22} />
               </div>
-              <h3 className="display text-2xl text-ink-900 mb-3">Landing page</h3>
+              <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
+                <h3 className="display text-2xl text-ink-900">Landing page</h3>
+                <span className="shrink-0 text-sm font-semibold px-3 py-1 rounded-full bg-brand-50 text-brand-600 border border-brand-100">
+                  Desde $300.000
+                </span>
+              </div>
               <p className="text-ink-500 mb-6 leading-relaxed">
                 Una sola página enfocada en un objetivo: capturar leads. Ideal
                 para campañas de Google Ads o lanzamientos puntuales.
@@ -113,25 +118,36 @@ export default function SitiosWebPage() {
                   </li>
                 ))}
               </ul>
+              <a href="https://wa.me/5491133980499" className="mt-8 flex items-center justify-center w-full px-5 py-3 rounded-full bg-brand-500 text-white font-medium hover:bg-brand-600 transition-colors">
+                Consultar por WhatsApp
+              </a>
             </div>
 
             <div className="p-8 md:p-10 rounded-3xl bg-brand-500 text-white border border-brand-500">
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white/10 text-white mb-5">
                 <Sparkles size={22} />
               </div>
-              <h3 className="display text-2xl mb-3">Sitio institucional</h3>
+              <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
+                <h3 className="display text-2xl text-white">Sitio institucional</h3>
+                <span className="shrink-0 text-sm font-semibold px-3 py-1 rounded-full bg-white/10 text-white border border-white/20">
+                  Desde $500.000
+                </span>
+              </div>
               <p className="text-blue-100 mb-6 leading-relaxed">
                 Múltiples páginas para empresas que necesitan presentar
-                servicios, equipo, blog y casos de éxito en una estructura ordenada.
+                servicios, equipo y casos de éxito en una estructura ordenada.
               </p>
               <ul className="space-y-2 text-sm text-white">
-                {["Múltiples secciones organizadas", "Blog/recursos opcional", "Sistema de contenido editable", "SEO técnico avanzado"].map((f, i) => (
+                {["Múltiples secciones organizadas", "Sistema de contenido editable", "SEO técnico avanzado"].map((f, i) => (
                   <li key={i} className="flex items-start gap-2">
                     <span className="mt-2 w-1 h-1 rounded-full bg-white shrink-0" />
                     {f}
                   </li>
                 ))}
               </ul>
+              <a href="https://wa.me/5491133980499" target="_blank" rel="noopener noreferrer" className="mt-8 flex items-center justify-center w-full px-5 py-3 rounded-full bg-white text-brand-500 font-medium hover:bg-white/90 transition-colors">
+                Consultar por WhatsApp
+              </a>
             </div>
           </div>
         </div>
@@ -171,6 +187,11 @@ export default function SitiosWebPage() {
                 { title: "Lanzamiento y soporte", description: "Configuramos analytics, formularios y dominio. Acompañamos los primeros meses.", duration: "A partir del lanzamiento" },
               ]}
             />
+            <div className="mt-10">
+              <a href="https://wa.me/5491133980499" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-brand-500 text-white font-medium hover:bg-brand-600 transition-colors">
+                Consultar por WhatsApp
+              </a>
+            </div>
           </div>
         </div>
       </section>

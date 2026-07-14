@@ -73,7 +73,7 @@ export function ContactSection({
             <ContactForm
               service={service}
               title="Pedir propuesta"
-              subtitle="Te respondemos en menos de 24 horas hábiles."
+              subtitle="Te respondemos de Lun a Vie · 9 a 17h."
             />
           </div>
         </div>

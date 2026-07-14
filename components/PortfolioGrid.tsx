@@ -14,6 +14,13 @@ type PortfolioItem = {
 
 const portfolioItems: PortfolioItem[] = [
   {
+    name: "Renaser Hidroterapia",
+    url: "https://www.renaserhidroterapia.com/",
+    imageKey: "renaser",
+    category: "Salud y Bienestar",
+    description: "Centro especializado en hidroterapia de colon, limpiezas hepáticas y nutrición.",
+  },
+  {
     name: "Seres Salud",
     url: "https://seressalud.com.ar/",
     imageKey: "seres-salud",

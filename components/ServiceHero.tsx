@@ -19,7 +19,7 @@ export function ServiceHero({
   description,
   highlights,
   service = "general",
-  ctaPrimary = { label: "Pedir propuesta", href: "#contacto" },
+  ctaPrimary = { label: "Pedir propuesta", href: "https://wa.me/5491133980499" },
   ctaSecondary = { label: "Cómo funciona", href: "#proceso" },
 }: ServiceHeroProps) {
   return (
@@ -79,7 +79,7 @@ export function ServiceHero({
               <ContactForm
                 service={service}
                 title="Pedir propuesta"
-                subtitle="Te respondemos en menos de 24 hs hábiles."
+                subtitle="Te respondemos de Lun a Vie · 9 a 17h."
               />
             </div>
           </div>

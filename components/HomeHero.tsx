@@ -55,7 +55,7 @@ export function HomeHero() {
             <Button href="#servicios" variant="primary" arrow>
               Ver servicios
             </Button>
-            <Button href="/#contacto" variant="ghost" arrow>
+            <Button href="https://wa.me/5491133980499" variant="ghost" arrow>
               Hablar con alguien
             </Button>
           </div>
