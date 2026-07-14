@@ -212,7 +212,7 @@ export default function GoogleAdsPage() {
 
               <div className="pt-6 border-t border-white/10">
                 <p className="text-xs font-semibold uppercase tracking-wider text-accent-400 mb-1">Desde</p>
-                <p className="display text-3xl font-semibold">$500.000–600.000<span className="text-base text-blue-200 font-sans font-normal">/mes</span></p>
+                <p className="display text-3xl font-semibold">$500.000<span className="text-base text-blue-200 font-sans font-normal">/mes</span></p>
               </div>
             </div>
           </div>
