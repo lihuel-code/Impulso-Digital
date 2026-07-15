@@ -1,50 +1,98 @@
-import { ServiceHero } from "@/components/ServiceHero";
-import { SectionHeader } from "@/components/SectionHeader";
-import { FeatureGrid } from "@/components/FeatureGrid";
-import { ProcessTimeline } from "@/components/ProcessTimeline";
-import { ContactSection } from "@/components/ContactSection";
-import {
-  MapPin,
-  TrendingUp,
-  Search,
-  MessageCircle,
-  Star,
-  Map,
-  BarChart3,
-  CheckCircle2,
-  XCircle
-} from "lucide-react";
+import type { Metadata } from "next";
+import type { CSSProperties } from "react";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Primero en tu Zona · Google Ads para negocios con local | Impulso Digital",
   description:
-    "Aparecé arriba en Google y en el mapa cuando te buscan cerca de tu local. Campaña local + ficha de Google + medición de llamadas, rutas y WhatsApp. Desde $150.000/mes.",
+    "Tu negocio entre los primeros lugares de Google y en el mapa (Google Maps), cuando te buscan cerca de tu local. Y cada consulta que eso genera, contada.",
 };
+
+const WA = "https://wa.me/5491133980499?text=" + encodeURIComponent("Hola, quiero info de Primero en tu Zona.");
+
+/* ------------------------------ íconos ------------------------------ */
+
+function IconPin({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z" />
+    </svg>
+  );
+}
+
+function IconSearch({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className} aria-hidden="true">
+      <circle cx="11" cy="11" r="7" />
+      <path d="m20 20-3.5-3.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function IconWhatsApp({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.2 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.8 1.4 1.8 2.2 1.2 1.1 2.3 1.4 2.6 1.6.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.9-.1 1.6Z" />
+    </svg>
+  );
+}
+
+function IconStar({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+    </svg>
+  );
+}
+
+function IconPhone({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+    </svg>
+  );
+}
+
+function IconDirections({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+      <polygon points="3 11 22 2 13 21 11 13 3 11" />
+    </svg>
+  );
+}
+
+/* ------------------------ tarjeta SERP (firma) ----------------------- */
 
 function SerpCard() {
   return (
-    <div className="w-full max-w-md rounded-2xl border border-ink-100 bg-white p-4 shadow-card sm:p-5 relative">
-      <div className="flex items-center gap-3 rounded-full border border-ink-100 bg-ink-50 px-4 py-2.5 mb-6">
-        <Search className="h-4 w-4 shrink-0 text-brand-500" />
-        <span className="truncate text-sm text-ink-700 font-medium">kinesiólogo cerca de mí</span>
+    <div className="w-full max-w-md rounded-2xl border border-white/10 bg-[#131519] p-4 shadow-[0_24px_60px_-24px_rgba(0,0,0,0.8)] sm:p-5">
+      {/* barra de búsqueda */}
+      <div className="flex items-center gap-3 rounded-full border border-white/10 bg-[#1c1f24] px-4 py-2.5">
+        <IconSearch className="h-4 w-4 shrink-0 text-[var(--muted)]" />
+        <span className="truncate text-sm text-[var(--ink)]">kinesiólogo cerca de mí</span>
       </div>
 
-      <div className="mt-4 rounded-xl border-2 border-brand-500 bg-brand-50 p-4 relative overflow-hidden">
-        <span className="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-brand-500 text-white mb-2 tracking-wider">
-          PATROCINADO
-        </span>
-        <div className="mt-1 flex items-start justify-between gap-3">
+      {/* resultado patrocinado: tu negocio */}
+      <div className="mt-4 rounded-xl border border-[var(--accent-border)] bg-[var(--accent-tint)] p-4">
+        <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--muted)]">Patrocinado</p>
+        <div className="mt-2 flex items-start justify-between gap-3">
           <div>
-            <p className="text-base font-bold text-ink-900">Tu negocio</p>
-            <p className="mt-0.5 text-xs text-ink-500 font-medium">A 1,2 km · Abierto ahora</p>
+            <div className="flex items-center gap-2">
+              <p className="text-[15px] font-semibold text-[var(--ink)]">Tu negocio</p>
+              <div className="flex items-center gap-0.5 text-yellow-400 text-xs">
+                <span>4,8</span>
+                <IconStar className="h-3 w-3" />
+                <span className="text-[var(--muted)] ml-0.5">(32)</span>
+              </div>
+            </div>
+            <p className="mt-0.5 text-xs text-[var(--muted)]">A 1,2 km · Abierto ahora</p>
           </div>
-          <MapPin className="mt-0.5 h-6 w-6 shrink-0 text-red-500 fill-red-100" />
+          <IconPin className="mt-0.5 h-6 w-6 shrink-0 text-[var(--pin)]" />
         </div>
-        <div className="mt-4 flex flex-wrap gap-2">
+        <div className="mt-3 flex flex-wrap gap-2">
           {["Llamar", "Cómo llegar", "WhatsApp"].map((chip) => (
             <span
               key={chip}
-              className="rounded-full bg-white border border-brand-200 px-3 py-1.5 text-xs font-semibold text-brand-600 shadow-soft"
+              className="rounded-full border border-[var(--accent-border)] px-3 py-1 text-xs font-medium text-[var(--accent)]"
             >
               {chip}
             </span>
@@ -52,302 +100,448 @@ function SerpCard() {
         </div>
       </div>
 
-      <div className="mt-4 space-y-3" aria-hidden="true">
+      {/* competidores, difuminados */}
+      <div className="mt-3 space-y-3" aria-hidden="true">
         {[0, 1].map((i) => (
-          <div key={i} className="rounded-xl border border-ink-100 bg-ink-50/50 p-4 opacity-70">
-            <div className="h-2.5 w-32 rounded bg-ink-200" />
-            <div className="mt-2 h-2 w-44 rounded bg-ink-100" />
+          <div key={i} className="rounded-xl border border-white/[0.06] p-4 opacity-50">
+            <div className="h-2.5 w-32 rounded bg-white/15" />
+            <div className="mt-2 h-2 w-44 rounded bg-white/[0.08]" />
           </div>
         ))}
       </div>
 
-      <p className="mt-5 text-center text-xs font-medium text-ink-400">
-        Cada "Llamar", "Cómo llegar" y "WhatsApp" queda medido.
+      <p className="mt-4 font-mono text-[11px] leading-relaxed text-[var(--muted)]">
+        Cada “Llamar”, “Cómo llegar” y “WhatsApp” queda medido.
       </p>
     </div>
   );
 }
 
+/* ------------------------------ página ------------------------------ */
+
 export default function PrimeroEnTuZonaPage() {
   return (
-    <>
-      <ServiceHero
-        eyebrow="Google Ads Local · Negocios con local"
-        service="primero-en-tu-zona"
-        title={
-          <>
-            Primero en <br />
-            tu zona<span className="text-red-500">.</span>
-          </>
-        }
-        description="Cuando alguien busca lo que vendés cerca de tu local, aparecés arriba en Google y en el mapa. Y cada llamada, cada “cómo llegar” y cada WhatsApp queda medido."
-        highlights={[
-          { icon: Search, label: "Campaña de búsqueda local" },
-          { icon: MapPin, label: "Ficha de Google optimizada" },
-          { icon: BarChart3, label: "Medición de llamadas y WhatsApp" },
-        ]}
-      />
+    <main
+      className="bg-[var(--paper)] text-[var(--ink)] antialiased"
+      style={
+        {
+          "--paper": "#0b0c0e",
+          "--ink": "#f5f6f7",
+          "--muted": "#9ba1a6",
+          "--accent": "#8ab4f8",
+          "--accent-border": "rgba(138,180,248,0.45)",
+          "--accent-tint": "rgba(138,180,248,0.06)",
+          "--pin": "#f28b82",
+        } as CSSProperties
+      }
+    >
+      {/* ================================ HERO ================================ */}
+      <section className="mx-auto grid max-w-6xl items-center gap-12 px-5 pb-20 pt-24 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:pt-32">
+        <div>
+          <p className="font-mono text-xs uppercase tracking-[0.22em] text-[var(--accent)]">
+            Nuevo · Para negocios con local
+          </p>
+          <h1 className="mt-5 text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+            Primero en
+            <br />
+            tu zona
+            <span className="text-[var(--pin)]">.</span>
+          </h1>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-[var(--muted)]">
+            Tu negocio entre los primeros lugares de Google y en el mapa (Google Maps), cuando te
+            buscan cerca de tu local. Y cada consulta que eso genera, contada.
+          </p>
+          <div className="mt-9 flex flex-wrap items-center gap-4">
+            <a
+              href={WA}
+              className="inline-flex items-center gap-2.5 rounded-full bg-[var(--ink)] px-6 py-3 text-sm font-semibold text-[#0b0c0e] transition hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)] motion-reduce:transition-none"
+            >
+              <IconWhatsApp className="h-4 w-4" />
+              Quiero aparecer en el mapa
+            </a>
+            <a
+              href="#precios"
+              className="text-sm font-medium text-[var(--accent)] underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)]"
+            >
+              Ver precios
+            </a>
+          </div>
+        </div>
 
-      {/* Visual / Promise */}
-      <section className="section bg-ink-50/40 border-y border-ink-100">
-        <div className="wrap grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div>
-            <SectionHeader
-              eyebrow="La oportunidad"
-              title="Aparecés exactamente donde te buscan."
-              description="La diferencia entre esperar a que te encuentren y estar presente en el momento y lugar exacto en el que necesitan tu servicio."
-            />
-            <ul className="mt-8 space-y-4">
-              {[
-                { icon: Search, title: "Intención activa", desc: "Aparecés solo ante personas que buscan activamente tu solución." },
-                { icon: MapPin, title: "Radio geográfico", desc: "Segmentamos la campaña alrededor de tu negocio." },
-                { icon: TrendingUp, title: "Totalmente medible", desc: "Sabés exactamente cuántas consultas generó la inversión." },
-              ].map((o, i) => (
-                <li key={i} className="flex gap-4 items-start">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-brand-50 text-brand-500 shrink-0">
-                    <o.icon size={18} />
+        <div className="justify-self-center lg:justify-self-end">
+          <SerpCard />
+        </div>
+      </section>
+
+      {/* ======================= ¿DÓNDE APARECE TU NEGOCIO? ===================== */}
+      <section className="border-t border-white/[0.06]">
+        <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
+          <p className="font-mono text-xs uppercase tracking-[0.22em] text-[var(--muted)] text-center mb-12">
+            ¿Dónde aparece tu negocio?
+          </p>
+          
+          <div className="grid gap-10 md:grid-cols-2">
+            
+            {/* Mockup A: Campaña Local (Mapa) */}
+            <div className="flex flex-col items-center">
+              <div className="w-full max-w-[340px] rounded-xl border border-white/10 bg-[#131519] overflow-hidden shadow-2xl relative">
+                {/* Simulated Map Header */}
+                <div className="h-24 w-full relative overflow-hidden bg-[#1c1f24]">
+                  {/* Decorative map lines */}
+                  <div className="absolute inset-0 opacity-20">
+                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                      <line x1="0" y1="40" x2="100%" y2="20" stroke="white" strokeWidth="2" />
+                      <line x1="50" y1="0" x2="80" y2="100%" stroke="white" strokeWidth="2" />
+                      <line x1="150" y1="100%" x2="250" y2="0" stroke="white" strokeWidth="3" />
+                    </svg>
                   </div>
+                  {/* Big map pin */}
+                  <IconPin className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-8 w-8 text-[var(--pin)] shadow-lg" />
+                </div>
+                
+                {/* Maps Card */}
+                <div className="p-4 bg-[#131519] border-t border-white/5 relative z-10 -mt-2 rounded-t-xl">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--muted)]">Patrocinado</p>
+                  <div className="mt-1 flex items-center justify-between">
+                    <div>
+                      <p className="text-[15px] font-semibold text-[var(--ink)]">Tu negocio</p>
+                      <div className="flex items-center gap-1 text-xs mt-0.5">
+                        <span className="text-yellow-400">4,8</span>
+                        <IconStar className="h-3 w-3 text-yellow-400" />
+                        <span className="text-[var(--muted)]">(32)</span>
+                        <span className="text-[var(--muted)] ml-1">· a 1,2 km</span>
+                      </div>
+                      <p className="text-xs text-[var(--muted)] mt-0.5">Abierto ahora</p>
+                    </div>
+                  </div>
+                  <div className="mt-3 flex gap-2">
+                    <div className="flex-1 rounded-full border border-white/20 bg-white/5 py-2 flex justify-center items-center gap-1.5 text-xs font-medium text-[var(--ink)]">
+                      <IconPhone className="h-3.5 w-3.5 text-[var(--accent)]" />
+                      Llamar
+                    </div>
+                    <div className="flex-1 rounded-full border border-white/20 bg-white/5 py-2 flex justify-center items-center gap-1.5 text-xs font-medium text-[var(--ink)]">
+                      <IconDirections className="h-3.5 w-3.5 text-[var(--accent)]" />
+                      Cómo llegar
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p className="mt-6 text-sm text-[var(--muted)] text-center max-w-[280px]">
+                <strong className="text-[var(--ink)] font-semibold">Con la campaña local:</strong> Aparecés acá, en Google Maps y en la sección de mapa del buscador.
+              </p>
+            </div>
+
+            {/* Mockup B: Campaña + Landing (Anuncio Search) */}
+            <div className="flex flex-col items-center">
+              <div className="w-full max-w-[340px] rounded-xl border border-white/10 bg-[#131519] p-4 shadow-2xl mt-4 md:mt-0">
+                <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--muted)] mb-1">Patrocinado</p>
+                <div className="flex items-center gap-2 mb-1">
+                  <div className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-[10px]">🌐</div>
                   <div>
-                    <p className="font-semibold text-ink-900 mb-0.5">{o.title}</p>
-                    <p className="text-ink-500 text-[15px]">{o.desc}</p>
+                    <p className="text-xs text-[var(--ink)] leading-none">Tu Negocio</p>
+                    <p className="text-[10px] text-[var(--muted)]">tunegocio.com.ar</p>
                   </div>
-                </li>
-              ))}
+                </div>
+                <h3 className="text-lg font-medium text-[var(--accent)] leading-tight mb-1.5 hover:underline cursor-pointer">
+                  El Mejor Servicio en Tu Zona
+                </h3>
+                <p className="text-[13px] text-[var(--muted)] leading-relaxed line-clamp-2">
+                  Atención profesional garantizada. Reservá tu turno online o vení directamente a nuestro local.
+                </p>
+                <div className="mt-3 pt-3 border-t border-white/10 grid gap-2">
+                  <div className="flex items-center gap-2 text-[11px] text-[var(--muted)]">
+                    <IconPin className="h-3 w-3 text-[var(--muted)]" />
+                    <span>Av. Principal 1234, a 1,2 km</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-[11px] text-[var(--muted)]">
+                    <IconPhone className="h-3 w-3 text-[var(--muted)]" />
+                    <span>Llamar al 011-1234-5678</span>
+                  </div>
+                  <div className="flex items-center gap-1 text-[11px] text-[var(--muted)]">
+                    <span className="text-yellow-400 font-semibold">4,8</span>
+                    <IconStar className="h-3 w-3 text-yellow-400" />
+                    <span>Reseñas de clientes</span>
+                  </div>
+                </div>
+              </div>
+              <p className="mt-6 text-sm text-[var(--muted)] text-center max-w-[280px]">
+                <strong className="text-[var(--ink)] font-semibold">Con campaña + landing:</strong> Además competís por los primeros anuncios de texto del buscador.
+              </p>
+            </div>
+            
+          </div>
+
+          <p className="mt-12 text-center text-sm font-medium text-[var(--accent)]">
+            Esa es la diferencia real entre las dos opciones de abajo.
+          </p>
+        </div>
+      </section>
+
+      {/* ============================ ALCANCE / RADIO =========================== */}
+      <section className="border-t border-white/[0.06] overflow-hidden relative">
+        <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 grid md:grid-cols-2 items-center gap-10">
+          <div>
+            <p className="font-mono text-xs uppercase tracking-[0.22em] text-[var(--accent)]">Alcance Local</p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+              Vos elegís el radio.
+            </h2>
+            <p className="mt-4 text-lg leading-relaxed text-[var(--muted)] max-w-md">
+              El anuncio solo se muestra a gente dentro de tu zona, en el momento en que busca lo que vendés.
+            </p>
+          </div>
+
+          <div className="relative flex items-center justify-center h-64">
+            {/* Concentric circles SVG */}
+            <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 400" fill="none">
+              <circle cx="200" cy="200" r="160" stroke="var(--accent)" strokeWidth="1" strokeDasharray="4 6" opacity="0.1" />
+              <circle cx="200" cy="200" r="110" stroke="var(--accent)" strokeWidth="1" strokeDasharray="4 6" opacity="0.3" />
+              <circle cx="200" cy="200" r="60" stroke="var(--accent)" strokeWidth="1" strokeDasharray="4 6" opacity="0.5" />
+              <circle cx="200" cy="200" r="60" fill="var(--accent)" opacity="0.05" />
+            </svg>
+            <IconPin className="h-10 w-10 text-[var(--pin)] relative z-10 drop-shadow-2xl" />
+            
+            {/* Labels */}
+            <div className="absolute top-[20%] right-[10%] text-[10px] font-mono text-[var(--muted)] opacity-50">5 km</div>
+            <div className="absolute top-[32%] right-[22%] text-[10px] font-mono text-[var(--muted)] opacity-70">3 km</div>
+            <div className="absolute top-[42%] right-[32%] text-[10px] font-mono text-[var(--accent)]">1 km</div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================ CÓMO FUNCIONA =========================== */}
+      <section className="border-t border-white/[0.06]">
+        <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
+          <p className="font-mono text-xs uppercase tracking-[0.22em] text-[var(--muted)]">Cómo funciona</p>
+          <div className="mt-10 grid gap-10 sm:grid-cols-3">
+            {[
+              {
+                n: "01",
+                t: "Aparecés",
+                d: "La campaña te muestra en el mapa y en el buscador, solo a gente cerca de tu local.",
+              },
+              {
+                n: "02",
+                t: "Te contactan",
+                d: "El anuncio lleva a una acción concreta: llamar, pedir la ruta o escribirte por WhatsApp.",
+              },
+              {
+                n: "03",
+                t: "Lo medís",
+                d: "Reporte mensual de una página: cuánto invertiste, cuántas consultas llegaron y cuánto costó cada una.",
+              },
+            ].map((s) => (
+              <div key={s.n}>
+                <p className="font-mono text-sm text-[var(--accent)]">{s.n}</p>
+                <h2 className="mt-3 text-xl font-semibold">{s.t}</h2>
+                <p className="mt-2 leading-relaxed text-[var(--muted)]">{s.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============================= QUÉ INCLUYE ============================ */}
+      <section className="border-t border-white/[0.06]">
+        <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
+          <p className="font-mono text-xs uppercase tracking-[0.22em] text-[var(--muted)]">Qué incluye</p>
+          <h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
+            Una campaña. Un objetivo. Todo medido.
+          </h2>
+          <ul className="mt-10 divide-y divide-white/[0.06] border-y border-white/[0.06]">
+            {[
+              ["Campaña de búsqueda local", "Segmentada por radio alrededor de tu local."],
+              ["Ficha de Google optimizada", "Fotos, servicios y datos de tu Perfil de Empresa."],
+              ["Optimización continua", "Ajuste de palabras y anuncios todas las semanas."],
+            ].map(([t, d], i) => (
+              <li key={t} className="grid gap-2 py-5 sm:grid-cols-[64px_240px_1fr] sm:items-baseline sm:gap-6">
+                <span className="font-mono text-xs text-[var(--muted)]">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="font-semibold">{t}</h3>
+                <p className="text-[var(--muted)]">{d}</p>
+              </li>
+            ))}
+            
+            {/* Ítem de medición visual */}
+            <li className="grid gap-2 py-6 sm:grid-cols-[64px_240px_1fr] sm:items-start sm:gap-6">
+              <span className="font-mono text-xs text-[var(--muted)]">04</span>
+              <h3 className="font-semibold">Medición transparente</h3>
+              <div>
+                <div className="flex flex-wrap gap-3 mb-3">
+                  <div className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm font-medium">
+                    <IconPhone className="h-4 w-4 text-[var(--accent)]" />
+                    Llamadas
+                  </div>
+                  <div className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm font-medium">
+                    <IconDirections className="h-4 w-4 text-[var(--accent)]" />
+                    Cómo llegar
+                  </div>
+                  <div className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm font-medium">
+                    <IconWhatsApp className="h-4 w-4 text-[var(--accent)]" />
+                    WhatsApp
+                  </div>
+                </div>
+                <p className="text-[var(--muted)] text-sm">Todo lo que genera la campaña, contado uno por uno.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      {/* ============================= PARA QUIÉN ============================= */}
+      <section className="border-t border-white/[0.06]">
+        <div className="mx-auto grid max-w-6xl gap-10 px-5 py-20 sm:px-8 lg:grid-cols-2">
+          <div className="rounded-2xl border border-white/[0.08] p-7">
+            <p className="font-mono text-xs uppercase tracking-[0.22em] text-[var(--accent)]">Es para vos si</p>
+            <ul className="mt-5 space-y-4 leading-relaxed">
+              <li>Atendés en un local o consultorio a la calle.</li>
+              <li>Tu ticket justifica la inversión: salud, estética, automotor, hogar, servicios profesionales.</li>
+              <li>Tenés capacidad para atender más consultas de las que hoy recibís.</li>
             </ul>
           </div>
-          <div className="relative justify-self-center lg:justify-self-end">
-            <SerpCard />
-            <div className="absolute -top-3 -right-3 px-3 py-1.5 rounded-full bg-brand-600 text-white text-xs font-semibold shadow-card z-10">
-              Posición #1
-            </div>
+          <div className="rounded-2xl border border-white/[0.08] p-7 text-[var(--muted)]">
+            <p className="font-mono text-xs uppercase tracking-[0.22em]">No es para vos si</p>
+            <ul className="mt-5 space-y-4 leading-relaxed">
+              <li>Vendés ticket bajo con margen chico, como gastronomía al paso.</li>
+              <li>Hoy no das abasto: más consultas serían un problema, no una solución.</li>
+              <li>Esperás resultados definitivos en la primera semana.</li>
+            </ul>
           </div>
         </div>
       </section>
 
-      {/* Process / Cómo funciona */}
-      <section id="proceso" className="section">
-        <div className="wrap grid md:grid-cols-[1fr_1.5fr] gap-12 lg:gap-20">
-          <div>
-            <SectionHeader
-              eyebrow="Cómo funciona"
-              title="De la búsqueda a la consulta."
-              description="Un flujo simple diseñado para maximizar el contacto de clientes potenciales en tu zona."
-            />
-          </div>
-          <div>
-            <ProcessTimeline
-              steps={[
-                { title: "Aparecés", description: "Una campaña de búsqueda con tu ubicación te muestra arriba y en el mapa, solo a gente cerca de tu local.", duration: "Paso 1" },
-                { title: "Te contactan", description: "El anuncio lleva a una acción concreta: llamar, pedir la ruta o escribirte por WhatsApp.", duration: "Paso 2" },
-                { title: "Lo medís", description: "Reporte mensual de una página: cuánto invertiste, cuántas consultas llegaron y cuánto costó cada una.", duration: "Paso 3" },
-              ]}
-            />
-            <div className="mt-10">
-              <a href="https://wa.me/5491133980499" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-brand-500 text-white font-medium hover:bg-brand-600 transition-colors">
-                Consultar por WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* =============================== PRECIOS ============================== */}
+      <section id="precios" className="scroll-mt-24 border-t border-white/[0.06]">
+        <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
+          <p className="font-mono text-xs uppercase tracking-[0.22em] text-[var(--muted)]">Precios</p>
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">Dos opciones. Nada más.</h2>
 
-      {/* Qué incluye */}
-      <section className="section bg-ink-50/40 border-y border-ink-100">
-        <div className="wrap">
-          <SectionHeader
-            eyebrow="Qué incluye"
-            title="Una campaña. Un objetivo. Todo medido."
-            description="Todo lo necesario para generar resultados desde el primer día."
-          />
-          <div className="mt-12">
-            <FeatureGrid
-              cols={3}
-              features={[
-                { icon: Map, title: "Campaña de búsqueda local", description: "Segmentada por radio alrededor de tu local, con recurso de ubicación." },
-                { icon: MapPin, title: "Ficha de Google optimizada", description: "Categorías, servicios, fotos y respuestas de tu Perfil de Empresa." },
-                { icon: MessageCircle, title: "Medición de consultas", description: "Llamadas, solicitudes de ruta y clics a WhatsApp, registrados." },
-                { icon: TrendingUp, title: "Optimización semanal", description: "Palabras negativas, pujas, horarios y anuncios, todas las semanas." },
-                { icon: BarChart3, title: "Reporte de una página", description: "Invertiste X, llegaron Y consultas, cada una costó Z. Sin humo." },
-              ]}
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Para quién */}
-      <section className="section">
-        <div className="wrap">
-          <div className="grid md:grid-cols-2 gap-5">
-            <div className="p-7 md:p-10 rounded-2xl bg-white border-l-4 border-l-brand-500 border-y border-r border-ink-100">
-              <p className="text-xs font-semibold uppercase tracking-wider text-brand-500 mb-4 flex items-center gap-2">
-                <CheckCircle2 size={16} /> Es para vos si
-              </p>
-              <ul className="space-y-4 text-ink-700 leading-relaxed">
-                <li className="flex items-start gap-2.5">
-                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-500 shrink-0" />
-                  Atendés en un local o consultorio a la calle.
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-500 shrink-0" />
-                  Tu ticket justifica la inversión: salud, estética, automotor, hogar, servicios.
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-500 shrink-0" />
-                  Tenés capacidad para atender más consultas de las que hoy recibís.
-                </li>
-              </ul>
-            </div>
-            <div className="p-7 md:p-10 rounded-2xl bg-white border-l-4 border-l-red-500 border-y border-r border-ink-100">
-              <p className="text-xs font-semibold uppercase tracking-wider text-red-500 mb-4 flex items-center gap-2">
-                <XCircle size={16} /> No es para vos si
-              </p>
-              <ul className="space-y-4 text-ink-500 leading-relaxed">
-                <li className="flex items-start gap-2.5">
-                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
-                  Vendés ticket bajo con margen chico, como gastronomía al paso.
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
-                  Hoy no das abasto: más consultas serían un problema, no una solución.
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
-                  Esperás resultados definitivos en la primera semana.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Precios */}
-      <section id="precios" className="section bg-ink-50/40 border-y border-ink-100">
-        <div className="wrap">
-          <SectionHeader
-            eyebrow="Planes e inversión"
-            title="Dos opciones. Nada más."
-            description="La inversión transparente y clara desde el primer momento."
-          />
-          
-          <div className="mt-12 grid md:grid-cols-2 gap-6">
+          <div className="mt-10 grid gap-6 lg:grid-cols-2">
             {/* opción A */}
-            <div className="flex flex-col p-8 md:p-10 rounded-3xl bg-white border border-ink-100 shadow-sm">
-              <h3 className="display text-3xl text-ink-900 mb-2">Campaña local</h3>
-              <p className="text-ink-500 mb-6">Ya tenés dónde recibir las consultas.</p>
-              
-              <div className="mb-8">
-                <p className="display text-4xl font-semibold text-ink-900">$150.000<span className="text-base text-ink-400 font-sans font-normal">/mes</span></p>
-              </div>
-
-              <p className="text-ink-700 leading-relaxed flex-1">
+            <div className="flex flex-col rounded-2xl border border-white/[0.08] p-7">
+              <h3 className="text-lg font-semibold">Campaña local</h3>
+              <p className="mt-1 text-sm text-[var(--muted)]">
+                Tu ficha de negocio apareciendo en el mapa de Google (Maps y sección de mapa del buscador), para gente cerca de tu local.
+              </p>
+              <p className="mt-6 text-4xl font-semibold tracking-tight">
+                $150.000<span className="text-base font-normal text-[var(--muted)]"> /mes</span>
+              </p>
+              <p className="mt-5 flex-1 leading-relaxed text-[var(--muted)]">
                 Todo lo de arriba: campaña, ficha de Google, medición, optimización semanal y reporte mensual.
               </p>
-
+              <p className="mt-4 text-[11px] leading-relaxed text-[var(--muted)] opacity-80 border-t border-white/10 pt-4">
+                * No compite por los primeros anuncios de texto del buscador.
+              </p>
               <a
-                href="https://wa.me/5491133980499"
-                target="_blank" rel="noopener noreferrer"
-                className="mt-8 flex items-center justify-center w-full px-5 py-3 rounded-full bg-brand-50 text-brand-600 font-medium hover:bg-brand-100 transition-colors"
+                href={WA}
+                className="mt-8 inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-semibold transition hover:border-white/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)] motion-reduce:transition-none"
               >
+                <IconWhatsApp className="h-4 w-4" />
                 Empezar por acá
               </a>
             </div>
 
             {/* opción B */}
-            <div className="relative flex flex-col p-8 md:p-10 rounded-3xl bg-brand-500 text-white shadow-card">
-              <div className="absolute -top-3 right-8 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white text-brand-600 text-xs font-semibold shadow-card">
-                <Star size={12} fill="currentColor" />
+            <div className="relative flex flex-col rounded-2xl border border-[var(--accent-border)] bg-[var(--accent-tint)] p-7">
+              <span className="absolute -top-3 left-7 rounded-full bg-[var(--accent)] px-3 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[#0b0c0e]">
                 Recomendado
-              </div>
-              
-              <h3 className="display text-3xl mb-2">Campaña + landing</h3>
-              <p className="text-blue-100 mb-6">Una página con un solo objetivo: que te contacten.</p>
-              
-              <div className="mb-4">
-                <p className="display text-4xl font-semibold text-white">$300.000<span className="text-base text-blue-200 font-sans font-normal"> el primer mes</span></p>
-              </div>
-
-              <p className="text-sm text-blue-200 mb-8">Después, $150.000/mes. La landing la pagás una sola vez.</p>
-
-              <p className="text-white leading-relaxed flex-1">
+              </span>
+              <h3 className="text-lg font-semibold">Campaña + landing</h3>
+              <p className="mt-1 text-sm text-[var(--muted)]">
+                Aparecés en el mapa y además competís por los primeros lugares del buscador, con una landing hecha para que te contacten.
+              </p>
+              <p className="mt-6 text-4xl font-semibold tracking-tight">
+                $300.000<span className="text-base font-normal text-[var(--muted)]"> el primer mes</span>
+              </p>
+              <p className="mt-1 text-sm text-[var(--muted)]">Después, $150.000/mes. La landing la pagás una sola vez.</p>
+              <p className="mt-5 flex-1 leading-relaxed text-[var(--muted)]">
                 Todo lo de la campaña local, más una landing enfocada en que llamen o escriban por WhatsApp.
               </p>
-
               <a
-                href="https://wa.me/5491133980499"
-                target="_blank" rel="noopener noreferrer"
-                className="mt-8 flex items-center justify-center w-full px-5 py-3 rounded-full bg-white text-brand-600 font-medium hover:bg-white/90 transition-colors"
+                href={WA}
+                className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-[var(--ink)] px-6 py-3 text-sm font-semibold text-[#0b0c0e] transition hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)] motion-reduce:transition-none"
               >
+                <IconWhatsApp className="h-4 w-4" />
                 Quiero el sistema completo
               </a>
             </div>
           </div>
 
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
-            <div className="p-6 rounded-2xl bg-white border border-ink-100">
-              <p className="leading-relaxed text-ink-600 text-sm">
-                <span className="font-semibold text-ink-900 block mb-1">Inversión en Google, aparte.</span> Sugerida desde
-                $150.000/mes (piso $100.000). La pagás directo a Google con tu tarjeta: tu cuenta, tu plata, todo a la vista.
-              </p>
-            </div>
-            <div className="p-6 rounded-2xl bg-white border border-ink-100">
-              <p className="leading-relaxed text-ink-600 text-sm">
-                <span className="font-semibold text-ink-900 block mb-1">Alta de $150.000, bonificada al 100%</span> firmando 3
-                meses. Sin permanencia, se abona con el primer mes.
-              </p>
-            </div>
+          <div className="mt-6 grid gap-4 rounded-2xl border border-white/[0.08] p-6 sm:grid-cols-2">
+            <p className="leading-relaxed text-[var(--muted)]">
+              <span className="font-semibold text-[var(--ink)]">Inversión en Google, aparte.</span> Sugerida desde
+              $150.000/mes (piso $100.000). La pagás directo a Google con tu tarjeta: tu cuenta, tu plata, todo a la
+              vista.
+            </p>
+            <p className="leading-relaxed text-[var(--muted)]">
+              <span className="font-semibold text-[var(--ink)]">Alta de $150.000, bonificada al 100%</span> firmando 3
+              meses. Sin permanencia, se abona con el primer mes.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="section">
-        <div className="wrap">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <p className="eyebrow text-red-500">Lo que no prometemos</p>
-            <h2 className="display text-3xl md:text-4xl text-ink-900 mb-5">
-              Nadie puede garantizarte el primer lugar. Nosotros tampoco.
+      {/* ========================= LO QUE NO PROMETEMOS ======================= */}
+      <section className="border-t border-white/[0.06]">
+        <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
+          <div className="max-w-3xl">
+            <p className="font-mono text-xs uppercase tracking-[0.22em] text-[var(--pin)]">Lo que no prometemos</p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+              Nadie puede garantizarte la primera posición. Nosotros tampoco.
             </h2>
-            <p className="text-lg text-ink-500 leading-relaxed">
-              Google no vende posiciones fijas, y desconfiá de quien te las prometa. Lo que sí prometemos: el mes 1
-              calibra la campaña, los meses 2 y 3 bajan el costo por consulta, y todos los meses ves exactamente qué
-              generó cada peso invertido.
+            <p className="mt-5 leading-relaxed text-[var(--muted)]">
+              Google no vende posiciones fijas. Tu ubicación varía (primero, segundo, tercero) según la competencia, 
+              tu presupuesto y la calidad de tu ficha. Lo que sí prometemos: el mes 1 calibra la campaña, 
+              los meses 2 y 3 bajan el costo por consulta, y todos los meses ves exactamente qué generó cada peso invertido.
             </p>
           </div>
 
-          <div className="max-w-3xl mx-auto divide-y divide-ink-100 border-y border-ink-100">
+          <div className="mt-12 max-w-3xl divide-y divide-white/[0.06] border-y border-white/[0.06]">
             {[
-              {
-                q: "¿Por qué la gestión cuesta más que la inversión mínima?",
-                a: "Porque el fee incluye la ficha de Google, la medición de cada consulta y la optimización semanal. Cuando el costo por consulta cierra, la inversión se escala y el fee queda igual.",
-              },
-              {
-                q: "¿Me garantizan aparecer primero?",
-                a: "No, y nadie puede. Garantizamos datos transparentes: vas a ver qué generó cada peso, todos los meses, en un reporte de una página.",
-              },
-              {
-                q: "¿Puedo probar un solo mes?",
-                a: "Podés, abonando el alta de $150.000. Pero un mes solo tira la calibración a la basura: por eso firmando 3 meses el alta es gratis.",
-              },
-            ].map((faq, i) => (
-              <details key={i} className="group py-6">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-ink-900 text-lg [&::-webkit-details-marker]:hidden">
-                  {faq.q}
-                  <span className="text-brand-500 transition group-open:rotate-45 text-2xl leading-none">
+              [
+                "¿Por qué la gestión cuesta más que la inversión mínima?",
+                "Porque el fee incluye la ficha de Google, la medición de cada consulta y la optimización semanal. Cuando el costo por consulta cierra, la inversión se escala y el fee queda igual.",
+              ],
+              [
+                "¿Me garantizan aparecer primero?",
+                "No, y nadie puede. Depende de la opción: con campaña local pura, aparecés en el mapa. Con campaña + landing, competís también por los primeros anuncios. En ambas garantizamos datos transparentes: vas a ver qué generó cada peso.",
+              ],
+              [
+                "¿Puedo probar un solo mes?",
+                "Podés, abonando el alta de $150.000. Pero un mes solo tira la calibración a la basura: por eso firmando 3 meses el alta es gratis.",
+              ],
+            ].map(([q, a]) => (
+              <details key={q} className="group py-5">
+                <summary className="flex cursor-pointer list-none items-baseline justify-between gap-4 font-medium [&::-webkit-details-marker]:hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent)]">
+                  {q}
+                  <span className="font-mono text-[var(--accent)] transition group-open:rotate-45 motion-reduce:transition-none">
                     +
                   </span>
                 </summary>
-                <p className="mt-4 leading-relaxed text-ink-500 pr-10">{faq.a}</p>
+                <p className="mt-3 max-w-2xl leading-relaxed text-[var(--muted)]">{a}</p>
               </details>
             ))}
           </div>
         </div>
       </section>
 
-      <ContactSection
-        service="primero-en-tu-zona"
-        title="¿Tu local aparece cuando te buscan cerca?"
-        subtitle="Hacé la prueba: buscá tu rubro en Google. Si el que aparece es tu competidor, hablemos."
-      />
-    </>
+      {/* ============================== CTA FINAL ============================= */}
+      <section className="border-t border-white/[0.06]">
+        <div className="mx-auto max-w-6xl px-5 py-24 text-center sm:px-8">
+          <IconPin className="mx-auto h-8 w-8 text-[var(--pin)]" />
+          <h2 className="mx-auto mt-6 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
+            ¿Tu local aparece cuando te buscan cerca?
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl leading-relaxed text-[var(--muted)]">
+            Hacé la prueba: buscá tu rubro en Google. Si el que aparece es tu competidor, hablemos.
+          </p>
+          <a
+            href={WA}
+            className="mt-9 inline-flex items-center gap-2.5 rounded-full bg-[var(--ink)] px-7 py-3.5 text-sm font-semibold text-[#0b0c0e] transition hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)] motion-reduce:transition-none"
+          >
+            <IconWhatsApp className="h-4 w-4" />
+            Averiguarlo por WhatsApp
+          </a>
+        </div>
+      </section>
+    </main>
   );
 }
