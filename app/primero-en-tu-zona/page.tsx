@@ -169,7 +169,7 @@ export default function PrimeroEnTuZonaPage() {
         service="primero-en-tu-zona"
         title={
           <>
-            Primero en <br />
+            Destacá en <br />
             tu zona<span className="text-red-500">.</span>
           </>
         }
