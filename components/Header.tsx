@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { Logo } from "./Logo";
+import Image from "next/image";
 
 const links = [
   { href: "/google-ads",     label: "Google Ads" },
@@ -31,11 +31,8 @@ export function Header() {
       }`}
     >
       <div className="wrap flex items-center justify-between h-16">
-        <Link href="/" className="flex items-center gap-2.5 group" aria-label="Impulso Digital">
-          <Logo className="h-7 w-7" />
-          <span className="font-display text-lg font-semibold tracking-tight text-ink-900">
-            Impulso<span className="text-brand-500">.</span>
-          </span>
+        <Link href="/" className="flex items-center group" aria-label="Impulso Digital">
+          <Image src="/logo.png" alt="Impulso Digital" width={180} height={40} className="h-8 w-auto" priority />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">

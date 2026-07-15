@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Logo } from "./Logo";
+import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 export function Footer() {
@@ -7,11 +7,8 @@ export function Footer() {
     <footer className="bg-ink-900 text-ink-100">
       <div className="wrap py-16 grid md:grid-cols-4 gap-10">
         <div className="md:col-span-2">
-          <div className="flex items-center gap-2.5 mb-5">
-            <Logo className="h-8 w-8" />
-            <span className="font-display text-xl font-semibold text-white">
-              Impulso<span className="text-brand-500">.</span>
-            </span>
+          <div className="flex items-center mb-5">
+            <Image src="/logo.png" alt="Impulso Digital" width={180} height={40} className="h-10 w-auto bg-white px-2 py-1.5 rounded-lg" />
           </div>
           <p className="text-ink-200 max-w-md leading-relaxed">
             Sistemas de generación de clientes para empresas de servicios. 
