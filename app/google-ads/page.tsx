@@ -179,10 +179,6 @@ export default function GoogleAdsPage() {
                 ))}
               </ul>
 
-              <div className="pt-6 border-t border-ink-100">
-                <p className="text-xs font-semibold uppercase tracking-wider text-ink-400 mb-1">Desde</p>
-                <p className="display text-3xl font-semibold text-ink-900">$300.000<span className="text-base text-ink-400 font-sans font-normal">/mes</span></p>
-              </div>
             </div>
 
             {/* Plan Scale - featured */}
@@ -210,15 +206,11 @@ export default function GoogleAdsPage() {
                 ))}
               </ul>
 
-              <div className="pt-6 border-t border-white/10">
-                <p className="text-xs font-semibold uppercase tracking-wider text-accent-400 mb-1">Desde</p>
-                <p className="display text-3xl font-semibold">$500.000<span className="text-base text-blue-200 font-sans font-normal">/mes</span></p>
-              </div>
             </div>
           </div>
 
           <p className="mt-8 text-sm text-ink-400 italic text-center">
-            Valores en ARS. No incluyen el presupuesto destinado a pauta publicitaria.
+            Nuestros planes de gestión no incluyen el presupuesto destinado a pauta publicitaria.
           </p>
         </div>
       </section>

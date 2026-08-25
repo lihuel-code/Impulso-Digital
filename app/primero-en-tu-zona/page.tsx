@@ -363,9 +363,9 @@ export default function PrimeroEnTuZonaPage() {
       <section id="precios" className="section">
         <div className="wrap">
           <SectionHeader
-            eyebrow="Precios"
+            eyebrow="Planes"
             title="Dos opciones. Nada más."
-            description="La inversión transparente y clara desde el primer momento."
+            description="Elegí la opción que mejor se adapte al momento de tu negocio."
           />
           
           <div className="mt-12 grid md:grid-cols-2 gap-6">
@@ -375,10 +375,7 @@ export default function PrimeroEnTuZonaPage() {
               <p className="text-ink-500 mb-6 min-h-[40px]">
                 Tu ficha de negocio apareciendo en el mapa de Google (Maps y sección de mapa del buscador), para gente cerca de tu local.
               </p>
-              
-              <div className="mb-6">
-                <p className="display text-4xl font-semibold text-ink-900">$150.000<span className="text-base text-ink-400 font-sans font-normal">/mes</span></p>
-              </div>
+
 
               <p className="text-ink-700 leading-relaxed flex-1">
                 Todo lo de arriba: campaña, ficha de Google, medición, optimización semanal y reporte mensual.
@@ -408,12 +405,7 @@ export default function PrimeroEnTuZonaPage() {
               <p className="text-blue-100 mb-6 min-h-[40px]">
                 Aparecés en el mapa y además competís por los primeros lugares del buscador, con una landing hecha para que te contacten.
               </p>
-              
-              <div className="mb-4">
-                <p className="display text-4xl font-semibold text-white">$300.000<span className="text-base text-blue-200 font-sans font-normal"> el primer mes</span></p>
-              </div>
 
-              <p className="text-sm text-blue-200 mb-6">Después, $150.000/mes. La landing la pagás una sola vez.</p>
 
               <p className="text-white leading-relaxed flex-1">
                 Todo lo de la campaña local, más una landing enfocada en que llamen o escriban por WhatsApp.
@@ -432,14 +424,13 @@ export default function PrimeroEnTuZonaPage() {
           <div className="mt-8 grid gap-6 md:grid-cols-2">
             <div className="p-6 rounded-2xl bg-ink-50/50 border border-ink-100">
               <p className="leading-relaxed text-ink-600 text-sm">
-                <span className="font-semibold text-ink-900 block mb-1">Inversión en Google, aparte.</span> Sugerida desde
-                $150.000/mes (piso $100.000). La pagás directo a Google con tu tarjeta: tu cuenta, tu plata, todo a la vista.
+                <span className="font-semibold text-ink-900 block mb-1">Inversión en Google, aparte.</span> El presupuesto destinado a anuncios lo definimos en conjunto. Lo pagás directo a Google con tu tarjeta: tu cuenta, tu plata, todo a la vista.
               </p>
             </div>
             <div className="p-6 rounded-2xl bg-ink-50/50 border border-ink-100">
               <p className="leading-relaxed text-ink-600 text-sm">
-                <span className="font-semibold text-ink-900 block mb-1">Alta de $150.000, bonificada al 100%</span> firmando 3
-                meses. Sin permanencia, se abona con el primer mes.
+                <span className="font-semibold text-ink-900 block mb-1">Setup inicial bonificado al 100%</span> firmando 3
+                meses. Sin permanencia obligatoria.
               </p>
             </div>
           </div>
@@ -471,7 +462,7 @@ export default function PrimeroEnTuZonaPage() {
               },
               {
                 q: "¿Puedo probar un solo mes?",
-                a: "Podés, abonando el alta de $150.000. Pero un mes solo tira la calibración a la basura: por eso firmando 3 meses el alta es gratis.",
+                a: "Podés, abonando el costo de setup inicial. Sin embargo, un mes solo tira la calibración a la basura: por eso firmando 3 meses el alta es gratis.",
               },
             ].map((faq, i) => (
               <details key={i} className="group py-6">

@@ -102,9 +102,6 @@ export default function SitiosWebPage() {
               </div>
               <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
                 <h3 className="display text-2xl text-ink-900">Landing page</h3>
-                <span className="shrink-0 text-sm font-semibold px-3 py-1 rounded-full bg-brand-50 text-brand-600 border border-brand-100">
-                  Desde $300.000
-                </span>
               </div>
               <p className="text-ink-500 mb-6 leading-relaxed">
                 Una sola página enfocada en un objetivo: capturar leads. Ideal
@@ -129,9 +126,6 @@ export default function SitiosWebPage() {
               </div>
               <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
                 <h3 className="display text-2xl text-white">Sitio institucional</h3>
-                <span className="shrink-0 text-sm font-semibold px-3 py-1 rounded-full bg-white/10 text-white border border-white/20">
-                  Desde $500.000
-                </span>
               </div>
               <p className="text-blue-100 mb-6 leading-relaxed">
                 Múltiples páginas para empresas que necesitan presentar
