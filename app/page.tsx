@@ -76,19 +76,7 @@ export default function HomePage() {
               ]}
               href="/sitios-web"
             />
-            <ServiceCard
-              number="03 / Local"
-              icon={MapPin}
-              title="Google Ads Local"
-              description="Aparecé arriba en Google y en el mapa cuando te buscan cerca de tu local. Campaña local + ficha de Google."
-              bullets={[
-                "Campaña de búsqueda local",
-                "Ficha de Google optimizada",
-                "Medición de llamadas y rutas",
-                "Reportes mensuales claros",
-              ]}
-              href="/primero-en-tu-zona"
-            />
+
           </div>
         </div>
       </section>
