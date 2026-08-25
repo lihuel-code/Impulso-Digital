@@ -389,7 +389,7 @@ export default function PrimeroEnTuZonaPage() {
               </p>
 
               <a
-                href="https://wa.me/5491133980499"
+                href="https://wa.me/5491157482035"
                 target="_blank" rel="noopener noreferrer"
                 className="mt-8 flex items-center justify-center w-full px-5 py-3 rounded-full bg-brand-50 text-brand-600 font-medium hover:bg-brand-100 transition-colors"
               >
@@ -420,7 +420,7 @@ export default function PrimeroEnTuZonaPage() {
               </p>
 
               <a
-                href="https://wa.me/5491133980499"
+                href="https://wa.me/5491157482035"
                 target="_blank" rel="noopener noreferrer"
                 className="mt-8 flex items-center justify-center w-full px-5 py-3 rounded-full bg-white text-brand-600 font-medium hover:bg-white/90 transition-colors"
               >

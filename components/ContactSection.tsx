@@ -50,8 +50,8 @@ export function ContactSection({
               </div>
               <div>
                 <p className="text-xs uppercase tracking-wider text-ink-400 font-semibold mb-1">Teléfono</p>
-                <a href="tel:+5491133980499" className="text-ink-900 font-medium hover:text-brand-500 transition-colors">
-                  +54 9 11 3398-0499
+                <a href="tel:+5491157482035" className="text-ink-900 font-medium hover:text-brand-500 transition-colors">
+                  +54 9 11 5748-2035
                 </a>
               </div>
             </li>

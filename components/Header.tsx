@@ -50,7 +50,7 @@ export function Header() {
 
         <div className="hidden md:flex items-center gap-4">
           <Link
-            href="https://wa.me/5491133980499"
+            href="https://wa.me/5491157482035"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-full bg-brand-500 text-white hover:bg-brand-600 transition-colors"
@@ -83,7 +83,7 @@ export function Header() {
               </Link>
             ))}
             <Link
-              href="https://wa.me/5491133980499"
+              href="https://wa.me/5491157482035"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}

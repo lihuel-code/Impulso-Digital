@@ -19,7 +19,7 @@ export function ServiceHero({
   description,
   highlights,
   service = "general",
-  ctaPrimary = { label: "Pedir propuesta", href: "https://wa.me/5491133980499" },
+  ctaPrimary = { label: "Pedir propuesta", href: "https://wa.me/5491157482035" },
   ctaSecondary = { label: "Cómo funciona", href: "#proceso" },
 }: ServiceHeroProps) {
   return (

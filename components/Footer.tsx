@@ -32,7 +32,7 @@ export function Footer() {
           </p>
           <ul className="space-y-2.5 text-sm">
             <li className="flex items-center gap-2.5"><Mail size={14} className="text-brand-400" /> gestion@impulsodigitalweb.com.ar</li>
-            <li className="flex items-center gap-2.5"><Phone size={14} className="text-brand-400" /> +54 9 11 3398-0499</li>
+            <li className="flex items-center gap-2.5"><Phone size={14} className="text-brand-400" /> +54 9 11 5748-2035</li>
             <li className="flex items-center gap-2.5"><MapPin size={14} className="text-brand-400" /> Buenos Aires, Argentina</li>
           </ul>
         </div>

@@ -242,7 +242,7 @@ export default function GoogleAdsPage() {
               ]}
             />
             <div className="mt-10">
-              <a href="https://wa.me/5491133980499" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-brand-500 text-white font-medium hover:bg-brand-600 transition-colors">
+              <a href="https://wa.me/5491157482035" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-brand-500 text-white font-medium hover:bg-brand-600 transition-colors">
                 Consultar por WhatsApp
               </a>
             </div>
