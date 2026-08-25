@@ -161,12 +161,12 @@ export default function GoogleAdsPage() {
           
           <div className="mt-12 grid md:grid-cols-2 gap-6">
             {/* Plan Base */}
-            <div className="p-8 md:p-10 rounded-3xl bg-white border border-ink-100">
+            <div className="flex flex-col p-8 md:p-10 rounded-3xl bg-white border border-ink-100">
               <p className="text-xs font-semibold uppercase tracking-wider text-ink-500 mb-3">Plan Base</p>
               <h3 className="display text-3xl text-ink-900 mb-2">Validar el canal</h3>
               <p className="text-ink-500 mb-8">Para empezar con Google Ads de forma profesional sin inversión masiva.</p>
               
-              <ul className="space-y-3 mb-8">
+              <ul className="flex-1 space-y-3 mb-8">
                 {[
                   "Hasta 3 frentes activos de captación",
                   "Configuración inicial y optimización mensual",
@@ -179,10 +179,17 @@ export default function GoogleAdsPage() {
                 ))}
               </ul>
 
+              <a
+                href="https://wa.me/5491157482035"
+                target="_blank" rel="noopener noreferrer"
+                className="mt-auto flex items-center justify-center w-full px-5 py-3 rounded-full bg-brand-50 text-brand-600 font-medium hover:bg-brand-100 transition-colors"
+              >
+                Consultar plan
+              </a>
             </div>
 
             {/* Plan Scale - featured */}
-            <div className="relative p-8 md:p-10 rounded-3xl bg-brand-500 text-white shadow-card">
+            <div className="relative flex flex-col p-8 md:p-10 rounded-3xl bg-brand-500 text-white shadow-card">
               <div className="absolute -top-3 right-8 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white text-brand-600 text-xs font-semibold shadow-card">
                 <Star size={12} fill="currentColor" />
                 Recomendado
@@ -192,7 +199,7 @@ export default function GoogleAdsPage() {
               <h3 className="display text-3xl mb-2">Escalar volumen</h3>
               <p className="text-blue-100 mb-8">Para empresas que ya validaron Google Ads y quieren aumentar el alcance.</p>
               
-              <ul className="space-y-3 mb-8">
+              <ul className="flex-1 space-y-3 mb-8">
                 {[
                   "Hasta 5 frentes activos",
                   "Cobertura ampliada (geográfica o por servicio)",
@@ -206,6 +213,13 @@ export default function GoogleAdsPage() {
                 ))}
               </ul>
 
+              <a
+                href="https://wa.me/5491157482035"
+                target="_blank" rel="noopener noreferrer"
+                className="mt-auto flex items-center justify-center w-full px-5 py-3 rounded-full bg-white text-brand-600 font-medium hover:bg-white/90 transition-colors"
+              >
+                Consultar plan
+              </a>
             </div>
           </div>
 
